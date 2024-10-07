@@ -50,8 +50,9 @@ var _a;
     var educationElement = document.getElementById('education');
     var experienceElement = document.getElementById('experience');
     var skillsElement = document.getElementById('skills');
+    var usernameElement = document.getElementById('username');
     // Check if all form elements are present
-    if (profilePictureInput && nameElement && emailElement && phoneElement && addressElement && educationElement && experienceElement && skillsElement) {
+    if (profilePictureInput && nameElement && emailElement && phoneElement && addressElement && educationElement && experienceElement && skillsElement && usernameElement) {
         // Get values from the form
         var name_1 = nameElement.value;
         var email = emailElement.value;
@@ -60,11 +61,12 @@ var _a;
         var education = educationElement.value;
         var experience = experienceElement.value;
         var skills = skillsElement.value;
+        var username = usernameElement.value;
         // picture elements
         var profilePictureFile = (_a = profilePictureInput.files) === null || _a === void 0 ? void 0 : _a[0];
         var profilePictureURL = profilePictureFile ? URL.createObjectURL(profilePictureFile) : '';
         // Create the resume output
-        var resumeHTML = "\n    <h2>Resume</h2>\n    ".concat(profilePictureURL ? "<img src=\"".concat(profilePictureURL, "\" alt=\"Profile Picture\" class=\"profilePicture\">") : "", "\n    <p><strong>Full Name:</strong> ").concat(name_1, "</p>\n    <p><strong>Email:</strong> ").concat(email, "</p>\n    <p><strong>Phone Number:</strong> ").concat(phone, " </p>\n    <p><strong>Address:</strong> ").concat(address, " </p>\n    \n    <h3>Education</h3>\n    <p>").concat(education, "</p>\n\n    <h3>Experience</h3>\n    <p>").concat(experience, "</p>\n\n    <h3>Skills</h3>\n    <p id=\"edit-skills\" class=\"editable\">").concat(skills, "</p>\n    ");
+        var resumeHTML = "\n    <h2>Resume</h2>\n    ".concat(profilePictureURL ? "<img src=\"".concat(profilePictureURL, "\" alt=\"Profile Picture\" class=\"profilePicture\">") : "", "\n    <p><strong>Full Name:</strong> ").concat(name_1, "</p>\n    <p><strong>Email:</strong> ").concat(email, "</p>\n    <p><strong>Phone Number:</strong> ").concat(phone, " </p>\n    <p><strong>Address:</strong> ").concat(address, " </p>\n    \n    <h3>Education</h3>\n    <p>").concat(education, "</p>\n\n    <h3>Experience</h3>\n    <p>").concat(experience, "</p>\n\n    <h3>Skills</h3>\n    <p>").concat(skills, "</p>\n    ");
         //************************************************************************* */
         // Display the resume output
         var resumeOutputElement = document.getElementById('resumeOutput');

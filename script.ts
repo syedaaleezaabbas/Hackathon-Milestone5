@@ -14,11 +14,12 @@ document.getElementById('resumeForm')?.addEventListener('submit', function (even
     const educationElement = document.getElementById('education') as HTMLTextAreaElement;
     const experienceElement = document.getElementById('experience') as HTMLTextAreaElement;
     const skillsElement = document.getElementById('skills') as HTMLTextAreaElement;
+    const usernameElement = document.getElementById('username') as HTMLInputElement;
 
 
 
     // Check if all form elements are present
-    if (profilePictureInput && nameElement && emailElement && phoneElement && addressElement && educationElement && experienceElement && skillsElement
+    if (profilePictureInput && nameElement && emailElement && phoneElement && addressElement && educationElement && experienceElement && skillsElement && usernameElement
     ) {
 
 
@@ -31,6 +32,7 @@ document.getElementById('resumeForm')?.addEventListener('submit', function (even
         const education = educationElement.value;
         const experience = experienceElement.value;
         const skills = skillsElement.value;
+        const username = usernameElement.value;
 
 
 
@@ -58,7 +60,7 @@ document.getElementById('resumeForm')?.addEventListener('submit', function (even
     <p>${experience}</p>
 
     <h3>Skills</h3>
-    <p id="edit-skills" class="editable">${skills}</p>
+    <p>${skills}</p>
     `;
 
 
