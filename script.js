@@ -12,21 +12,25 @@ form.addEventListener('submit', function (event) {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
+    var address = document.getElementById('address').value;
     var education = document.getElementById('education').value;
     var experience = document.getElementById('experience').value;
     var skills = document.getElementById('skills').value;
+    var languages = document.getElementById('languages').value;
     // Save form data in localStorage with the username as the key
     var resumeData = {
         name: name,
         email: email,
         phone: phone,
+        address: address,
         education: education,
         experience: experience,
-        skills: skills
+        skills: skills,
+        languages: languages,
     };
     localStorage.setItem(username, JSON.stringify(resumeData)); // Saving the data locally
     // Generate the resume content dynamically
-    var resumeHTML = "\n<h2>Editable Resume</h2>\n<h3>Personal Information</h3>\n<p><b>Name:</b> <span contenteditable=\"true\">".concat(name, "</span></p>\n<p><b>Email:</b> <span contenteditable=\"true\">").concat(email, "</span></p>\n<p><b>Phone:</b> <span contenteditable=\"true\">").concat(phone, "</span></p>\n<h3>Education</h3>\n<p contenteditable=\"true\">").concat(education, "</p>\n<h3>Experience</h3>\n<p contenteditable=\"true\">").concat(experience, "</p>\n<h3>Skills</h3>\n<p contenteditable=\"true\">").concat(skills, "</p>\n");
+    var resumeHTML = "\n<h2>Editable Resume</h2>\n<h3 style=\"background-color:#9966cc\">Personal Information</h3>\n<p>Name: <span contenteditable=\"true\">".concat(name, "</span></p>\n<p>Email: <span contenteditable=\"true\">").concat(email, "</span></p>\n<p>Phone: <span contenteditable=\"true\">").concat(phone, "</span></p>\n<p>Address: <span contenteditable=\"true\">").concat(address, "</span></p>\n<h3 style=\"background-color:#9966cc\">Education</h3>\n<p contenteditable=\"true\">").concat(education, "</p>\n<h3 style=\"background-color:#9966cc\">Experience</h3>\n<p contenteditable=\"true\">").concat(experience, "</p>\n<h3 style=\"background-color:#9966cc\">Skills</h3>\n<p contenteditable=\"true\">").concat(skills, "</p>\n<h3 style=\"background-color:#9966cc\">Languages<h3>\n<p contenteditable=\"true\">").concat(languages, "</p>\n");
     // Display the generated resume
     resumeDisplayElement.innerHTML = resumeHTML;
     // Generate a shareable URL with the username only
@@ -57,12 +61,16 @@ window.addEventListener('DOMContentLoaded', function () {
                 resumeData.email;
             document.getElementById('phone').value =
                 resumeData.phone;
+            document.getElementById('address').value =
+                resumeData.address;
             document.getElementById('education').value =
                 resumeData.education;
             document.getElementById('experience').value
                 = resumeData.experience;
             document.getElementById('skills').value =
                 resumeData.skills;
+            document.getElementById('languages').value =
+                resumeData.languages;
         }
     }
 });
